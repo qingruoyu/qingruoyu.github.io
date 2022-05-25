@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Congo</title>
+    <link>https://qingruoyu.github.io/tags/</link>
+    <description>Recent content in Tags on Congo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 22 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://qingruoyu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Virome</title>
+      <link>https://qingruoyu.github.io/tags/virome/</link>
+      <pubDate>Sun, 22 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingruoyu.github.io/tags/virome/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>方法</title>
+      <link>https://qingruoyu.github.io/tags/%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Sun, 22 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingruoyu.github.io/tags/%E6%96%B9%E6%B3%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>流程</title>
+      <link>https://qingruoyu.github.io/tags/%E6%B5%81%E7%A8%8B/</link>
+      <pubDate>Sun, 22 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingruoyu.github.io/tags/%E6%B5%81%E7%A8%8B/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
