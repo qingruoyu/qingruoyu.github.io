@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Documentation on Litrain</title>
-    <link>https://qingruoyu.github.io/essay/</link>
-    <description>Recent content in Documentation on Litrain</description>
+    <title>随笔 on Litrain</title>
+    <link>http://example.org/essay/</link>
+    <description>Recent content in 随笔 on Litrain</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 17 Dec 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://qingruoyu.github.io/essay/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Dec 2017 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/essay/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>虞</title>
-      <link>https://qingruoyu.github.io/essay/%E8%99%9E/</link>
+      <link>http://example.org/essay/%E8%99%9E/</link>
       <pubDate>Sun, 17 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://qingruoyu.github.io/essay/%E8%99%9E/</guid>
+      <guid>http://example.org/essay/%E8%99%9E/</guid>
       <description>虞姬虞姬，奈若何？</description>
     </item>
     
