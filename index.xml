@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>欢迎来到我的世界！:tada: on Litrain</title>
+    <link>/</link>
+    <description>Recent content in 欢迎来到我的世界！:tada: on Litrain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于</title>
+      <link>/about/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>教育经历 # 关于研究生 # 2020.</description>
+    </item>
+    
+    <item>
+      <title>01-质控质检</title>
+      <link>/note/01-%E8%B4%A8%E6%A3%80%E8%B4%A8%E6%8E%A7/</link>
+      <pubDate>Sun, 22 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/note/01-%E8%B4%A8%E6%A3%80%E8%B4%A8%E6%8E%A7/</guid>
+      <description>分析</description>
+    </item>
+    
+    <item>
+      <title>虞</title>
+      <link>/essay/%E8%99%9E/</link>
+      <pubDate>Sun, 17 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/essay/%E8%99%9E/</guid>
+      <description>虞姬虞姬，奈若何？</description>
+    </item>
+    
+  </channel>
+</rss>
