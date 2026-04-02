@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>随笔 on Litrain</title>
+    <link>/essays/</link>
+    <description>Recent content in 随笔 on Litrain</description>
+    <generator>Hugo</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Sun, 22 May 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/essays/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>轻若语</title>
+      <link>/essays/%E8%BD%BB%E8%8B%A5%E8%AF%AD/</link>
+      <pubDate>Sun, 22 May 2022 00:00:00 +0000</pubDate>
+      <guid>/essays/%E8%BD%BB%E8%8B%A5%E8%AF%AD/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>聚散有时，后会有期</title>
+      <link>/essays/%E8%81%9A%E6%95%A3%E6%9C%89%E6%97%B6%E5%90%8E%E4%BC%9A%E6%9C%89%E6%9C%9F/</link>
+      <pubDate>Sat, 13 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>/essays/%E8%81%9A%E6%95%A3%E6%9C%89%E6%97%B6%E5%90%8E%E4%BC%9A%E6%9C%89%E6%9C%9F/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>随笔</title>
+      <link>/essays/%E9%9A%8F%E7%AC%94/</link>
+      <pubDate>Sun, 11 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>/essays/%E9%9A%8F%E7%AC%94/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>虞</title>
+      <link>/essays/%E8%99%9E/</link>
+      <pubDate>Sun, 17 Dec 2017 00:00:00 +0000</pubDate>
+      <guid>/essays/%E8%99%9E/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
