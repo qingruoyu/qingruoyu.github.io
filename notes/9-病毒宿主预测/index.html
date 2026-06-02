@@ -1,0 +1,754 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html
+  lang="zh-Hans"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"
+><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#FFFFFF" />
+  
+  <title>病毒宿主预测 &middot; Litrain</title>
+    <meta name="title" content="病毒宿主预测 &middot; Litrain" />
+  
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.8a082f81b27f3cb2ee528df0b0bdc39787034cf2cc34d4669fbc9977c929023c.js"
+    integrity="sha256-iggvgbJ/PLLuUo3wsL3Dl4cDTPLMNNRmn7yZd8kpAjw="
+  ></script>
+  
+  
+  
+  
+  
+  
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.0f028ba75a858b9f7c1d3385287158ddfd26a57d8a4e9a83fd33b7d30d8fb2ae.css"
+    integrity="sha256-DwKLp1qFi598HTOFKHFY3f0mpX2KTpqD/TO30w2Psq4="
+  />
+  
+    
+    
+    
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.0221623774b4ffae62d33aaf8aa954618227c122f904ee05c0e6ded32c9ea373.js"
+      integrity="sha256-AiFiN3S0/65i0zqviqlUYYInwSL5BO4FwObe0yyeo3M="
+      data-copy="复制"
+      data-copied="已复制"
+    ></script>
+  
+  
+  <meta
+    name="description"
+    content="
+      质控质检
+    "
+  />
+  
+  
+  
+  
+    <link rel="canonical" href="/notes/9-%E7%97%85%E6%AF%92%E5%AE%BF%E4%B8%BB%E9%A2%84%E6%B5%8B/" />
+  
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:url" content="/notes/9-%E7%97%85%E6%AF%92%E5%AE%BF%E4%B8%BB%E9%A2%84%E6%B5%8B/">
+  <meta property="og:site_name" content="Litrain">
+  <meta property="og:title" content="病毒宿主预测">
+  <meta property="og:description" content="质控质检">
+  <meta property="og:locale" content="zh_Hans">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="notes">
+    <meta property="article:published_time" content="2022-04-12T00:00:00+00:00">
+    <meta property="article:modified_time" content="2022-04-12T00:00:00+00:00">
+    <meta property="article:tag" content="Virome">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="病毒宿主预测">
+  <meta name="twitter:description" content="质控质检">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "研究笔记",
+    "name": "病毒宿主预测",
+    "headline": "病毒宿主预测",
+    "description": "质控质检",
+    "abstract": "分析",
+    "inLanguage": "zh-Hans",
+    "url" : "\/notes\/9-%E7%97%85%E6%AF%92%E5%AE%BF%E4%B8%BB%E9%A2%84%E6%B5%8B\/",
+    "author" : {
+      "@type": "Person",
+      "name": "Litrain"
+    },
+    "copyrightYear": "2022",
+    "dateCreated": "2022-04-12T00:00:00\u002b00:00",
+    "datePublished": "2022-04-12T00:00:00\u002b00:00",
+    
+    "dateModified": "2022-04-12T00:00:00\u002b00:00",
+    
+    "keywords": ["Virome"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "504"
+  }
+  </script>
+    
+    <script type="application/ld+json">
+    {
+   "@context": "https://schema.org",
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+     {
+       "@type": "ListItem",
+       "item": "/",
+       "name": "欢迎来到我的世界！ Tada",
+       "position": 1
+     },
+     {
+       "@type": "ListItem",
+       "item": "/notes/",
+       "name": "研究笔记",
+       "position": 2
+     },
+     {
+       "@type": "ListItem",
+       "name": "病毒宿主预测",
+       "position": 3
+     }
+   ]
+ }
+  </script>
+
+  
+  
+    <meta name="author" content="Litrain" />
+  
+  
+    
+      <link href="mailto:bxp2218@outlook.com?subject=%e8%81%94%e7%b3%bb%e6%88%91&amp;body=Hello%ef%bc%81%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%e8%bf%99%e4%b8%aa%e9%82%ae%e4%bb%b6%e8%81%94%e7%b3%bb%e6%88%91" rel="me" />
+    
+      <link href="https://github.com/qingruoyu" rel="me" />
+    
+      <link href="https://space.bilibili.com/137694214?spm_id_from=333.1007.0.0" rel="me" />
+    
+  
+  
+  
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+
+
+  
+  
+</head>
+<body
+    class="m-auto flex h-screen max-w-7xl flex-col bg-neutral px-6 text-lg leading-7 text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32"
+  >
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="-translate-y-8 rounded-b-lg bg-primary-200 px-3 py-1 text-sm focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content"
+        ><span class="pe-2 font-bold text-primary-600 dark:text-primary-400">&darr;</span
+        >跳到主要内容</a
+      >
+    </div>
+    
+    
+      <header class="py-6 font-semibold text-neutral-900 dark:text-neutral sm:py-10 print:hidden">
+  <nav class="flex items-start justify-between sm:items-center">
+    
+    <div class="flex flex-row items-center">
+      
+  <a
+    class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
+    rel="me"
+    href="/"
+    >Litrain</a
+  >
+
+    </div>
+    
+    
+      <ul class="flex list-none flex-col text-end sm:flex-row">
+        
+          
+            
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
+              
+                <a
+                  href="/notes/"
+                  title="研究笔记"
+                  
+                  
+                  ><span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >笔记</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+            
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
+              
+                <a
+                  href="/essays/"
+                  title="随笔"
+                  
+                  
+                  ><span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >随笔</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+            
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
+              
+                <a
+                  href="/about/"
+                  title="关于"
+                  
+                  
+                  ><span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >关于</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+            
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
+              
+                
+                
+                  <button
+                    id="search-button-1"
+                    title="搜索 (/)"
+                  >
+                    
+                      <span
+                        class="group-dark:hover:text-primary-400 transition-colors group-hover:text-primary-600"
+                      ><span class="icon relative inline-block px-1 align-text-bottom"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span></span><span
+                        class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                        ></span
+                      >
+                    
+                  </button>
+                
+              
+            </li>
+          
+            
+              
+          
+        
+      </ul>
+    
+  </nav>
+</header>
+
+    
+    <div class="relative flex grow flex-col">
+      <main id="main-content" class="grow">
+        
+  <article>
+    <header class="max-w-prose">
+      
+      <h1 class="mb-8 mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        病毒宿主预测
+      </h1>
+      
+      
+    </header>
+    <section class="prose mt-0 flex max-w-full flex-col dark:prose-invert lg:flex-row">
+      
+      <div class="min-h-0 min-w-0 max-w-prose grow">
+        <p>宿主预测有四种基本思路：</p>
+<ul>
+<li>
+<p>1）CRISPR比对；</p>
+</li>
+<li>
+<p>2）tRNA比对；</p>
+</li>
+<li>
+<p>3）全基因序列比对；</p>
+</li>
+<li>
+<p>4）寡核苷酸比对</p>
+</li>
+</ul>
+<p>此外，陆续出现各种综合性软件，使用一种或多种方法并结合机器学习预测宿主</p>
+<ul>
+<li>传统预测思路</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">方法</th>
+          <th style="text-align: center">原位</th>
+          <th style="text-align: center">外部</th>
+          <th style="text-align: center">软件</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">CRISPR</td>
+          <td style="text-align: center">MAGs</td>
+          <td style="text-align: center">RefSeq database</td>
+          <td style="text-align: center">CASC(CRT)、crass</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">tRNA</td>
+          <td style="text-align: center">MAGs</td>
+          <td style="text-align: center">tRNAviz database</td>
+          <td style="text-align: center">tRNAscan-SE、aragorn</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">BLASTn</td>
+          <td style="text-align: center">MAGs</td>
+          <td style="text-align: center">RefSeq database</td>
+          <td style="text-align: center">BLAST</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">ONF</td>
+          <td style="text-align: center">MAGs</td>
+          <td style="text-align: center">GenBank database</td>
+          <td style="text-align: center">VirHostMatcher</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>外部宿主预测</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">软件</th>
+          <th style="text-align: center">原理</th>
+          <th style="text-align: center">数据库</th>
+          <th style="text-align: center">调用软件</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">VirHostMatcher-Net</td>
+          <td style="text-align: center">CRISPR与ONF</td>
+          <td style="text-align: center">有</td>
+          <td style="text-align: center">CRT、WIsH</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">VPF-Class</td>
+          <td style="text-align: center">病毒蛋白家族</td>
+          <td style="text-align: center">有</td>
+          <td style="text-align: center">-</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">iPHoP</td>
+          <td style="text-align: center">CRISPR、ONF等</td>
+          <td style="text-align: center">有</td>
+          <td style="text-align: center">RaFAH、WIsH、VHM、PHP</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>原位宿主预测</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">软件</th>
+          <th style="text-align: center">原理</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">CASC(CRT)</td>
+          <td style="text-align: center">CRISPR match</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">tRNAscan-SE</td>
+          <td style="text-align: center">tRNA match</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">blastn</td>
+          <td style="text-align: center">seqence match</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">VirHostMatcher</td>
+          <td style="text-align: center">ONF(k-mer)</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="91-crispr对比" class="relative group">9.1 CRISPR对比 <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#91-crispr%e5%af%b9%e6%af%94" aria-label="锚点">#</a></span></h2><h3 id="1-crispr的识别---casc" class="relative group">1. CRISPR的识别 - CASC <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#1-crispr%e7%9a%84%e8%af%86%e5%88%ab---casc" aria-label="锚点">#</a></span></h3><blockquote>
+<p><a href="https://github.com/dnasko/CASC" target="_blank" rel="noreferrer">CASC</a>是“CASC Ain&rsquo;t Simply CRT”，基于CRISPR识别工具CRT(<a href="http://www.room220.com/crt/" target="_blank" rel="noreferrer">CRISPR Recognition Tool, 2007</a>)</p>
+</blockquote>
+<p>此外，还有基于未组装的reads的识别工具<a href="https://github.com/ctSkennerton/crass" target="_blank" rel="noreferrer">crass</a></p>
+<ol>
+<li>安装：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/dnasko/CASC.git
+</span></span><span class="line"><span class="cl">perl Makefile.PL <span class="nv">PREFIX</span><span class="o">=</span>/Path/to/where/to/install
+</span></span><span class="line"><span class="cl">make
+</span></span><span class="line"><span class="cl">make <span class="nb">test</span>
+</span></span><span class="line"><span class="cl">make install
+</span></span><span class="line"><span class="cl"><span class="c1"># 写入环境变量（环境变量设置参考https://www.cnblogs.com/yaoqingzhuan/p/10889718.html）</span>
+</span></span><span class="line"><span class="cl">vim ~/.bashrc
+</span></span><span class="line"><span class="cl"><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/Path/to/where/to/install/bin
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> PATH
+</span></span><span class="line"><span class="cl"><span class="c1"># export PERL5LIB=/Path/to/where/to/install/lib/perl5/site_perl</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PERL5LIB</span><span class="o">=</span>/Path/to/where/to/install/lib:<span class="si">${</span><span class="nv">PERL5LIB</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl">激活环境变量
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> ~/.bashrc
+</span></span></code></pre></div><p>debug：在工作目录创建软链接指向<code>$PATH/CASC/bin/CRT1.2b.jar</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ln -s ~/software/CASC/bin/CRT1.2b.jar CRT1.2b.jar
+</span></span></code></pre></div><ol start="2">
+<li>使用：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">casc -i TestSeqs.nuc.fasta -o outdir -n <span class="m">8</span>
+</span></span></code></pre></div><p>参数：-n 线程；<code>--conservative</code>（默认为<code>--liberal</code>）</p>
+<p>conservative为CRISPR基因附近带有cas蛋白基因，liberal无</p>
+<ol start="3">
+<li>结果：</li>
+</ol>
+<p>输出结果为7个文件</p>
+<p>预测MAGs(所有样品在一个文件)的CRISPR序列</p>
+<p>选择spaces序列文件，去除少于3个CRISPR的序列</p>
+<h3 id="2-blastn比对" class="relative group">2. blastn比对 <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#2-blastn%e6%af%94%e5%af%b9" aria-label="锚点">#</a></span></h3><p>将筛选后的CRISPR序列与viral contigs序列进行blastn</p>
+<p>对比结果选择 identity ≥95% 且 SNPs ≤2 的，确定病毒宿主</p>
+<h2 id="92-trna对比" class="relative group">9.2 tRNA对比 <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#92-trna%e5%af%b9%e6%af%94" aria-label="锚点">#</a></span></h2><blockquote>
+<p><a href="http://trna.ucsc.edu/tRNAviz/about/" target="_blank" rel="noreferrer">tRNAviz数据库</a></p>
+</blockquote>
+<h3 id="1-trna识别---trnascan-sebioconda安装" class="relative group">1. tRNA识别 - tRNAscan-SE（bioconda安装） <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#1-trna%e8%af%86%e5%88%ab---trnascan-sebioconda%e5%ae%89%e8%a3%85" aria-label="锚点">#</a></span></h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 分别用两种模式(-A/-B)识别tRNA</span>
+</span></span><span class="line"><span class="cl">tRNAscan-SE -B -a MAGs_tRNA_out.fasta -m MAGs_tRNA.stat MAGs.fasta -q --thread <span class="m">14</span>
+</span></span></code></pre></div><p>参数：-A 古菌；-B 细菌； 默认真核</p>
+<p>-a 输出tRNA序列；-m 输出统计结果；-q 安静输出</p>
+<p>另外一个tRNA预测软件ARAGORN，速度非常快，但注意结果的tRNA的编号会重新编排</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">aragorn -t -fons -o viral_tRNA.fasta viral_blastn_5000.fasta
+</span></span></code></pre></div><p>按MAG的文件分别运行，完成后添加前缀，再合并所有MAG的tRNA序列</p>
+<h3 id="2-blastn对比" class="relative group">2. blastn对比 <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#2-blastn%e5%af%b9%e6%af%94" aria-label="锚点">#</a></span></h3><p>分别预测完MAGs和viral contigs的tRNA后，用blastn对比tRNA序列</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 用MAGs的tRNA序列建库</span>
+</span></span><span class="line"><span class="cl">makeblastdb -in MAGs_tRNA_A.fasta -dbtype nucl -out db/MAGs_A
+</span></span><span class="line"><span class="cl"><span class="c1"># 对比</span>
+</span></span><span class="line"><span class="cl">blastn -query viral_tRNA_A.fasta -out blastn_A.out -db db/MAGs_A -outfmt <span class="s2">&#34;6 qseqid sseqid qcovs pident length mismatch evalue bitscor
+</span></span></span><span class="line"><span class="cl"><span class="s2">e qlen slen&#34;</span> -num_threads <span class="m">12</span>
+</span></span></code></pre></div><h3 id="3-统计数据" class="relative group">3. 统计数据 <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#3-%e7%bb%9f%e8%ae%a1%e6%95%b0%e6%8d%ae" aria-label="锚点">#</a></span></h3><p>只筛选完全匹配的blastn的结果</p>
+<p>将筛选后的blastn结果与MAGs的分类数据合并，==去除gammaproteobacteria的结果==</p>
+<p>注意：使用tRNAscan-SE时要分别使用<code>-A</code>和<code>-B</code>两种模式分别预测、对比</p>
+<h2 id="93-全基因序列比对---blastn" class="relative group">9.3 全基因序列比对 - BLASTn <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#93-%e5%85%a8%e5%9f%ba%e5%9b%a0%e5%ba%8f%e5%88%97%e6%af%94%e5%af%b9---blastn" aria-label="锚点">#</a></span></h2><p>使用BLASTn将viral contig与MAGs进行对比</p>
+<p>bitscore ≥ 50, e-value ≥ 1e-3, identity ≥ 70%, and matching length ≥ 2500 bp</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat viral_MAGs_blastn.out <span class="p">|</span> awk <span class="s1">&#39;$12 &gt;= 50&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;$3 &gt;= 70&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;$4 &gt;= 2500&#39;</span> &gt; viral_MAGs_blastn_filter.out
+</span></span></code></pre></div><h2 id="94-寡核苷酸比对onf" class="relative group">9.4 寡核苷酸比对(ONF) <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#94-%e5%af%a1%e6%a0%b8%e8%8b%b7%e9%85%b8%e6%af%94%e5%af%b9onf" aria-label="锚点">#</a></span></h2><blockquote>
+<p>使用<a href="https://github.com/jessieren/VirHostMatcher" target="_blank" rel="noreferrer">VirHostMatcher</a>计算距离d2*</p>
+</blockquote>
+<p>首先拆分viral contigs文件，每一个序列成为一个文件，并以 &gt; 后的名称命名文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">perl -ne <span class="s1">&#39;if (/^&gt;(\S+)/) { close OUT; open OUT, &#34;&gt;$1.fasta&#34; } print OUT&#39;</span> &lt;viral_contigs.fasta&gt;
+</span></span></code></pre></div><p>运行VHM</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python ~/software/VirHostMatcher/vhm.py -v viral_contigs/ -b MAGs_bin/ -o output -t host_MAGs.txt -d <span class="m">1</span>
+</span></span></code></pre></div><p>host_MAGs.txt 为宿主MAGs分类信息，表头如下：</p>
+<p>hostNCBIName&ndash;hostName&ndash;hostSuperkingdom&ndash;hostPhylum&ndash;hostClass&ndash;hostOrder&ndash;hostFamily&ndash;hostGenus&ndash;hostSpecies</p>
+<p>-d 1 只输出d2*矩阵，不输出每一个的预测结果</p>
+<p>筛选出d2*&lt; 0.25的部分，得到viral contig与MAG的对应关系</p>
+<h2 id="95-virhostmatcher-net" class="relative group">9.5 VirHostMatcher-Net <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#95-virhostmatcher-net" aria-label="锚点">#</a></span></h2><p>VirHostMatcher-Net与9.4的软件无关，其原理结合了CRISPR与ONF两种原理，使用了CRT与WIsH两个工具，自带数据库</p>
+<p>输入文件夹，文件夹内每一个fasta文件为一个viral contig，同上，首先拆分文件，每一个序列成为一个文件，并以 &gt; 后的名称命名文件</p>
+<p>运行（文件夹内文件不要超过1500个，太多程序会崩）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nohup /home/zhanyuanchao/miniconda3/bin/python ~/software/VirHostMatcher-Net/VirHostMatcher-Net.py -q ~/software/VirHostMatcher-Net/test/mVCs --short-contig -o output -i tmp -n <span class="m">1</span> -t <span class="m">8</span> -d ~/software/VirHostMatcher-Net/data <span class="p">&amp;</span>
+</span></span></code></pre></div><p>-q QUERY_VIRUS_DIR  包含viral contigs的文件夹，文件以.fasta、.fa名</p>
+<p>-t NUM_THREADS 线程.  Default = 1</p>
+<p>&ndash;short-contig 对短viral contig预测宿主，WIsH需要此参数</p>
+<p>-o OUTPUT_DIR</p>
+<p>-n topN Number of top predictions written to the output files. All predictions will be output if there is a tie in score. Default = 1</p>
+<p>-i INTERMEDIATE_DIR 中间过程文件夹. Default =./intermediate_res</p>
+<p>-l GENOME_LIST Location of the file containing host NCBI genome names of interest</p>
+<p>-d 数据库位置</p>
+<h2 id="96-vpf-class" class="relative group">9.6 VPF-Class <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#96-vpf-class" aria-label="锚点">#</a></span></h2><p>参考之前的部分[[07-分类鉴定#6 3 VPF-Class]]</p>
+<p>阈值参考membership ratio ≥ 0.3 and confidence score ≥ 0.5.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat host_family.tsv <span class="p">|</span> awk <span class="s1">&#39;$3 &gt;= 0.3&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;$5 &gt; 0.5&#39;</span> &gt; host_family_filter.tsv
+</span></span></code></pre></div><h2 id="97-iphop" class="relative group">9.7 iPHoP <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#97-iphop" aria-label="锚点">#</a></span></h2><blockquote>
+<p><a href="https://bitbucket.org/srouxjgi/iphop/src/main/" target="_blank" rel="noreferrer">iPHoP (Integrated Phage HOst Prediction)</a> is a bioinformatic tool for computational prediction of host taxonomy from phage genomes.</p>
+</blockquote>
+<p>iPHoP使用多种方法预测宿主，带有数据库，并可以将自己的MAGs加入到数据库中（实验性功能）进行宿主预测。</p>
+<ul>
+<li>
+<p><a href="https://doi.org/10.1016/j.patter.2021.100274" target="_blank" rel="noreferrer">RaFAH</a>：产生带有相关分数的宿主属预测</p>
+</li>
+<li>
+<p>blastn对比MAGs基因组</p>
+</li>
+<li>
+<p>blastn对比CRISPR spacer数据库</p>
+</li>
+<li>
+<p><a href="https://doi.org/10.1093/bioinformatics/btx383" target="_blank" rel="noreferrer">WIsH</a>：基于病毒和宿主基因组之间k-mer组成相似性的宿主关联</p>
+</li>
+<li>
+<p><a href="https://doi.org/10.1093/nargab/lqaa044" target="_blank" rel="noreferrer">VHM</a> - <a href="https://doi.org/10.1093/nar/gkw1002" target="_blank" rel="noreferrer">s2* 相似性</a>：k-mer 组成相似性的宿主关联</p>
+</li>
+<li>
+<p><a href="https://doi.org/10.1186/s12915-020-00938-6" target="_blank" rel="noreferrer">PHP</a>：基于病毒和宿主基因组之间k-mer组成相似性的宿主关联</p>
+</li>
+</ul>
+<ol>
+<li>安装</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ conda create -n iphop <span class="nv">python</span><span class="o">=</span>3.8
+</span></span><span class="line"><span class="cl">$ conda activate iphop
+</span></span><span class="line"><span class="cl">$ conda install -c conda-forge -c bioconda iphop
+</span></span></code></pre></div><p>下载<a href="https://portal.nersc.gov/cfs/m342/iphop/db/iPHoP.latest.tar.gz" target="_blank" rel="noreferrer">数据库</a>，gz压缩文件约109GB，解压后199G</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">tar -zxvf iPHoP.latest.tar.gz
+</span></span><span class="line"><span class="cl"><span class="c1"># 验证数据库完整性（可选）</span>
+</span></span><span class="line"><span class="cl">iphop download --db_dir path_to_iPHoP_db --full_verify
+</span></span></code></pre></div><ol start="2">
+<li>使用</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 运行时间较长，约28小时</span>
+</span></span><span class="line"><span class="cl">iphop predict --fa_file my_input_phages.fasta --db_dir path/to/iphop_db/Sept_2021_pub/ --out_dir iphop_output/ --num_threads <span class="m">20</span>
+</span></span></code></pre></div><p>实验性功能：将自己的MAGs加入到数据库中，组成新数据库进行宿主预测</p>
+<p>方法思路概览</p>
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">graph TD
+	A[CASC] --&gt; I[MAGs]
+	B[tRNAscan-SE] --&gt; I[MAGs]
+	C[BLAST]--&gt;I[MAGs]
+	D[ONF]--&gt;I[MAGs]
+	F[CRISPRCasdb]--&gt;A[CASC]
+	G[tRNAvia_db]--&gt;B[tRNAscan-SE]
+	H[RefSeq]--&gt;C[BLAST]
+	E[VirHostMatcher-Net]--&gt;D[ONF]
+</code></pre><p>
+
+
+
+
+
+
+  
+  
+<figure><img src="/images/10.jpg" alt="内源宿主进化树-病毒数量图" class="mx-auto my-0 rounded-md" /><figcaption class="text-center">内源宿主进化树-病毒数量图</figcaption>
+</figure>
+</p>
+
+      </div>
+    </section>
+    <footer class="max-w-prose pt-8 print:hidden">
+      
+
+      
+
+      
+  
+    
+    
+    
+      
+      
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="group flex" href="/notes/1-%E6%B5%8B%E5%BA%8F%E6%95%B0%E6%8D%AE%E7%9A%84%E8%B4%A8%E6%A3%80%E8%B4%A8%E6%8E%A7/">
+              <span
+                class="me-2 text-neutral-700 transition-transform group-hover:-translate-x-[2px] group-hover:text-primary-600 dark:text-neutral dark:group-hover:text-primary-400"
+                ><span class="ltr:inline rtl:hidden">&larr;</span
+                ><span class="ltr:hidden rtl:inline">&rarr;</span></span
+              >
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >测序数据的质控质检</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+    </footer>
+  </article>
+
+      </main>
+      
+        <div
+          class="pointer-events-none absolute bottom-0 end-0 top-[100vh] w-12"
+          id="to-top"
+          hidden="true"
+        >
+          <a
+            href="#the-top"
+            class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 backdrop-blur hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+            aria-label="回到顶部"
+            title="回到顶部"
+          >
+            &uarr;
+          </a>
+        </div>
+      <footer class="py-10 print:hidden">
+  
+  
+  <div class="flex items-center justify-between">
+    <div>
+      
+      
+        <p class="text-sm text-neutral-500 dark:text-neutral-400">
+            &copy;
+            2026
+            Litrain
+        </p>
+      
+      
+      
+        <p class="text-xs text-neutral-500 dark:text-neutral-400">
+          
+          
+          由 <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+            href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href="https://github.com/jpanther/congo" target="_blank" rel="noopener noreferrer">Congo</a> 强力驱动
+        </p>
+      
+    </div>
+    <div class="flex flex-row items-center">
+      
+      
+      
+      
+        <div
+          class="me-14 cursor-pointer text-sm text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        >
+          <button id="appearance-switcher-0" type="button" aria-label="appearance switcher">
+            <div
+              class="flex h-12 w-12 items-center justify-center dark:hidden"
+              title="切换为深色模式"
+            >
+              <span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+            </div>
+            <div
+              class="hidden h-12 w-12 items-center justify-center dark:flex"
+              title="切换为浅色模式"
+            >
+              <span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+            </div>
+          </button>
+        </div>
+      
+    </div>
+  </div>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 z-50 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]"
+  data-url="/"
+>
+  <div
+    id="search-modal"
+    class="top-20 mx-auto flex min-h-0 w-full max-w-3xl flex-col rounded-md border border-neutral-200 bg-neutral shadow-lg dark:border-neutral-700 dark:bg-neutral-800"
+  >
+    <header class="relative z-10 flex flex-none items-center justify-between px-2">
+      <form class="flex min-w-0 flex-auto items-center">
+        <div class="flex h-8 w-8 items-center justify-center text-neutral-400">
+          <span class="icon relative inline-block px-1 align-text-bottom"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="mx-1 flex h-12 flex-auto appearance-none bg-transparent focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="搜索"
+          tabindex="0"
+        />
+      </form>
+      <button
+        id="close-search-button"
+        class="flex h-8 w-8 items-center justify-center text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="关闭 (Esc)"
+      >
+        <span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto overflow-auto px-2">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+</html>

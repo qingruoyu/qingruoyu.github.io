@@ -9,10 +9,17 @@
     <lastBuildDate>Sun, 22 May 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/virome/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>01-质控质检</title>
-      <link>/notes/01-%E8%B4%A8%E6%A3%80%E8%B4%A8%E6%8E%A7/</link>
+      <title>测序数据的质控质检</title>
+      <link>/notes/1-%E6%B5%8B%E5%BA%8F%E6%95%B0%E6%8D%AE%E7%9A%84%E8%B4%A8%E6%A3%80%E8%B4%A8%E6%8E%A7/</link>
       <pubDate>Sun, 22 May 2022 00:00:00 +0000</pubDate>
-      <guid>/notes/01-%E8%B4%A8%E6%A3%80%E8%B4%A8%E6%8E%A7/</guid>
+      <guid>/notes/1-%E6%B5%8B%E5%BA%8F%E6%95%B0%E6%8D%AE%E7%9A%84%E8%B4%A8%E6%A3%80%E8%B4%A8%E6%8E%A7/</guid>
+      <description>分析</description>
+    </item>
+    <item>
+      <title>病毒宿主预测</title>
+      <link>/notes/9-%E7%97%85%E6%AF%92%E5%AE%BF%E4%B8%BB%E9%A2%84%E6%B5%8B/</link>
+      <pubDate>Tue, 12 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>/notes/9-%E7%97%85%E6%AF%92%E5%AE%BF%E4%B8%BB%E9%A2%84%E6%B5%8B/</guid>
       <description>分析</description>
     </item>
   </channel>
