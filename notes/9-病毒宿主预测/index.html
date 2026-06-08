@@ -179,6 +179,17 @@
   
 
 
+  
+  
+  
+  
+  <script
+    defer
+    type="text/javascript"
+    src="/js/mermaid.bundle.c3c0c404b4719f7b9c4e7c8e60401d5a25dd35c933ae2b16e8f8810f6b447bce.js"
+    integrity="sha256-w8DEBLRxn3ucTnyOYEAdWiXdNckzrisW6PiBD2tEe84="
+  ></script>
+
 
 
 
@@ -341,9 +352,7 @@
 </li>
 </ul>
 <p>此外，陆续出现各种综合性软件，使用一种或多种方法并结合机器学习预测宿主</p>
-<ul>
-<li>传统预测思路</li>
-</ul>
+<p><strong>传统预测思路</strong></p>
 <table>
   <thead>
       <tr>
@@ -514,7 +523,7 @@
 <h2 id="95-virhostmatcher-net" class="relative group">9.5 VirHostMatcher-Net <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#95-virhostmatcher-net" aria-label="锚点">#</a></span></h2><p>VirHostMatcher-Net与9.4的软件无关，其原理结合了CRISPR与ONF两种原理，使用了CRT与WIsH两个工具，自带数据库</p>
 <p>输入文件夹，文件夹内每一个fasta文件为一个viral contig，同上，首先拆分文件，每一个序列成为一个文件，并以 &gt; 后的名称命名文件</p>
 <p>运行（文件夹内文件不要超过1500个，太多程序会崩）</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nohup /home/zhanyuanchao/miniconda3/bin/python ~/software/VirHostMatcher-Net/VirHostMatcher-Net.py -q ~/software/VirHostMatcher-Net/test/mVCs --short-contig -o output -i tmp -n <span class="m">1</span> -t <span class="m">8</span> -d ~/software/VirHostMatcher-Net/data <span class="p">&amp;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nohup python ~/software/VirHostMatcher-Net/VirHostMatcher-Net.py -q ~/software/VirHostMatcher-Net/test/mVCs --short-contig -o output -i tmp -n <span class="m">1</span> -t <span class="m">8</span> -d ~/software/VirHostMatcher-Net/data <span class="p">&amp;</span>
 </span></span></code></pre></div><p>-q QUERY_VIRUS_DIR  包含viral contigs的文件夹，文件以.fasta、.fa名</p>
 <p>-t NUM_THREADS 线程.  Default = 1</p>
 <p>&ndash;short-contig 对短viral contig预测宿主，WIsH需要此参数</p>
@@ -566,17 +575,22 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 运行时间较长，约28小时</span>
 </span></span><span class="line"><span class="cl">iphop predict --fa_file my_input_phages.fasta --db_dir path/to/iphop_db/Sept_2021_pub/ --out_dir iphop_output/ --num_threads <span class="m">20</span>
 </span></span></code></pre></div><p>实验性功能：将自己的MAGs加入到数据库中，组成新数据库进行宿主预测</p>
-<p>方法思路概览</p>
-<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">graph TD
-	A[CASC] --&gt; I[MAGs]
-	B[tRNAscan-SE] --&gt; I[MAGs]
-	C[BLAST]--&gt;I[MAGs]
-	D[ONF]--&gt;I[MAGs]
-	F[CRISPRCasdb]--&gt;A[CASC]
-	G[tRNAvia_db]--&gt;B[tRNAscan-SE]
-	H[RefSeq]--&gt;C[BLAST]
-	E[VirHostMatcher-Net]--&gt;D[ONF]
-</code></pre><p>
+<p><strong>方法思路概览</strong></p>
+<div class="mermaid" align="center">
+  
+graph TD
+	A[CASC] --> I[MAGs]
+	B[tRNAscan-SE] --> I[MAGs]
+	C[BLAST]-->I[MAGs]
+	D[ONF]-->I[MAGs]
+	F[CRISPRCasdb]-->A[CASC]
+	G[tRNAvia_db]-->B[tRNAscan-SE]
+	H[RefSeq]-->C[BLAST]
+	E[VirHostMatcher-Net]-->D[ONF]
+
+</div>
+
+<p>
 
 
 
